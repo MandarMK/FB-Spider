@@ -18,12 +18,17 @@ pid=search_res['data'][pno-1]['id']
       
 variable = graph.get(pid+'/posts?fields=comments.limit(5){message},message&limit=5')
 
-#Deleting the paging sections 
+#Deleting the paging sections and ids
 del variable['paging']
 
-for i in range(5):
+for i in range(0,len(variable['data'])):
+    if 'id' in variable['data'][i] :
+        del variable['data'][i]['id']
     if 'comments' in variable['data'][i]:
         del variable['data'][i]['comments']['paging']
+    for j in range(0, len(variable['data'][i]['comments']['data']) ):
+        if 'id' in variable['data'][i]['comments']['data'][j]:
+            del variable['data'][i]['comments']['data'][j]['id']
         
 with open('data.json', 'wb') as outfile:
     json.dump(variable, outfile)
