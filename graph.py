@@ -2,7 +2,7 @@ from facepy import GraphAPI
 import json
 from json2html import *
 import webbrowser
-graph= GraphAPI('EAADVyVeGdsYBABVCjQ50Ul3EYNDZBqPn8osp8oykuS2sgcDBiZCSwPVv7ChsZBbht9xDOyjNrOKHSR9ZCq3ZCWlm2NHYvcaDwpZCm4aMyZBrZBJKFHa9QCJjvdbX19OkUdqmZBUCzDKvnvedjELgbqkGIhQyQlNq9xLBuK2fxyh5zhgZDZD')
+graph= GraphAPI('YOUR_ACCESS_TOKEN')
 
 print("Please enter the page-name:" )
 PageName=raw_input()
